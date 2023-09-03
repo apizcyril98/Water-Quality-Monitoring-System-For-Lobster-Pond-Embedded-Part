@@ -65,3 +65,21 @@ a mobile app via the cloud using an internet connection
   <img src="https://i.ibb.co/TWdbcxK/Screenshot-2023-09-03-224833.png" alt="Architectural Design of the system">
 </div>
 
+### IoT Gateway
+This section focuses on the connectivity between the microcontroller and the 
+internet. As a consequence of Arduino Uno R3 not having integrated wifi module chip, 
+external Nodemcu ESP8266 is used in this project to connect the microcontroller to 
+the cloud server, Firebase, in the process of sending data. In order to use the Nodemcu 
+as wifi module and transmit dissolved oxygen data from Arduino to the device, D2 
+and D3 pins of the Nodemcu need to be connected to pin 10 and pin 11 of Arduino 
+board respectively. Other than that, D6 and D7 pins of Nodemcu board also need to be 
+connected to pin 12 and 13 of the Arduino board to transmit pH data. This connection 
+is called Port 2 while the prior connection is called Port 1. Since the Arduino is 
+powered up from the USB-B port, pin 3.3V of Arduino is connected directly to the Vin 
+pin of Nodemcu as a means to supply the power source to the ESP8266 board. GND 
+pins on both boards are connected with each other as ground. Figure 3.5 below shows 
+the circuit connection between the two boards
+<div align="center">
+  <img src="https://i.ibb.co/rHVtTsr/Screenshot-2023-09-03-225851.png" alt="IoT Gateway">
+</div>
+
